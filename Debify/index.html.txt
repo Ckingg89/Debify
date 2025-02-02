@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debify - Debate Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Debify</h1>
+        <p>Sharpen your arguments, challenge perspectives</p>
+    </header>
+
+    <main>
+        <div class="category-card" id="religion-card">
+            <h2>Religion</h2>
+            <button class="find-match-btn" onclick="startMatchmaking('religion')">Find Match</button>
+        </div>
+
+        <div class="category-card" id="politics-card">
+            <h2>Politics</h2>
+            <button class="find-match-btn" onclick="startMatchmaking('politics')">Find Match</button>
+        </div>
+    </main>
+
+    <div id="status-container">
+        <p id="status-text"></p>
+        <p id="countdown"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+let matchmakingInterval = null;
+
+function startMatchmaking(category) {
+    // Disable buttons during matchmaking
+    document.querySelectorAll('.find-match-btn').forEach(btn => {
+        btn.disabled = true;
+    });
+
+    // Show initial status
+    document.getElementById('status-text').textContent = 'Finding match...';
+    document.getElementById('countdown').textContent = '';
+
+    // Simulate matchmaking with random delay (3-6 seconds)
+    setTimeout(() => {
+        handleMatchFound();
+    }, 3000);
+}
+
+function handleMatchFound() {
+    document.getElementById('status-text').textContent = 'Match found!';
+    startCountdown();
+}
+
+function startCountdown() {
+    let count = 5;
+    const countdownElement = document.getElementById('countdown');
+    
+    countdownElement.textContent = `Starting debate in ${count}...`;
+    
+    const countdownInterval = setInterval(() => {
+        count--;
+        countdownElement.textContent = `Starting debate in ${count}...`;
+        
+        if (count <= 0) {
+            clearInterval(countdownInterval);
+            redirectToDebatePage();
+        }
+    }, 1000);
+}
+
+function redirectToDebatePage() {
+    window.location.href = 'debate.html';
+}
